@@ -1,6 +1,7 @@
 services:
   grafana:
-    image: grafana/grafana-enterprise
+    build:
+      context: .
     restart: unless-stopped
     volumes:
       - grafana_storage:/var/lib/grafana
