@@ -1,0 +1,16 @@
+services:
+  grafana:
+    image: grafana/grafana-enterprise
+    restart: unless-stopped
+    volumes:
+      - grafana_storage:/var/lib/grafana
+    networks:
+      - proxy
+
+volumes:
+  grafana_storage:
+
+networks:
+  proxy:
+    name: cicd_proxy
+    external: true
